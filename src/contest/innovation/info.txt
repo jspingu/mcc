@@ -1,0 +1,21 @@
+Innovation puzzle
+
+Place all cards with the highest column value into a buffer
+
+At this point, all of the remaining cards necessarily have a lower column value than the ones in the buffer
+
+Within the cards in the buffer, the one that should have all four values displayed is the one with the greatest row value
+
+The only way for one of the remaining cards to give more points is if it is used as the card on top. Therefore there can only be at most one of these cards, and the best remaining card is the one with the greatest sum.
+
+It is best for this card to replace the card with the lowest column value. This minimizes the loss in points.
+
+Evaluate whether or not this replacement is worth it:
+
+a - card to be replaced (lowest column value in buffer)
+b - replacing card (highest sum among the remaining cards)
+c - current card on top (highest row value in buffer)
+
+points = points - a_c - c_r + b_c + b_r
+
+replace if a with b if b > a_c + c_r
